@@ -1,0 +1,33 @@
+lass Solution {
+public:
+    int lengthOfLastWord(string s) {
+       
+        s=" "+s+" ";
+        cout<<s<<endl;
+         int n = s.size();
+        // int count = 0;
+        int last=n;
+        int first=0;
+        bool flag=false;
+        for(int i= n-1; i>=0; i--){
+            if(s[i]!=' '&&flag==false)
+            {
+                flag=true;
+                
+                last=i;
+            }
+            else if(flag&&s[i]==' '){
+                first=i;
+                break;
+            }
+            else
+            {
+                continue;
+            }
+
+        }
+
+        return last-first;
+        
+    }
+};
